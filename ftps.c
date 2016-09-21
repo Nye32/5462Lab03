@@ -69,23 +69,6 @@ int main (int argc, char *argv[]) {
 	memset(&(request.sin_zero), '\0',8);
 	dest_addr = *((struct sockaddr *)&request);
 	memcpy(requestsize, &int32, 4);
-
-	/*
-	if (bind(sock, (struct sockaddr *)&sin_addr, sizeof(struct sockaddr_in)) < 0) {
-		perror("Error: Unable to Bind Stream Socket");
-		exit(1);
-	}
-	*/
-	
-	// Listen for socket connections (Max open connections is 5)
-	//listen(sock, 5);
-	// Accept 1 connection: msgsocket
-	/*
-	if ((msgsock = ACCEPT(sock, (struct sockaddr *)NULL, (int *)NULL)) == -1) {
-		perror("Error: Unable to connect Stream Socket.");
-		exit(1);
-	}
-	*/
 	
 	// Clear Buffer (Set it to 0)
 	bzero(databufin, sizeof(databufin));
